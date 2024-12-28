@@ -140,12 +140,12 @@ void NewBlock() {
     for (int i = 0; i < 4; i++) {
 
         // Obliczanie pozycji bloku na ekranie
-		float ogX = currentBlock->bx + currentBlock->shape[currentBlock->rotation][i][0] * offset;
-		float ogY = currentBlock->by + currentBlock->shape[currentBlock->rotation][i][1] * offset;
+	float ogX = ReturnBlockX(currentBlock, offset, i);
+	float ogY = ReturnBlockY(currentBlock, offset, i);
 
         // Obliczanie współrzędnych na planszy
         int wX = (int)((ogX - lX) / offset) + 1; 
-        int wY = (int)((ogY - dY) / offset) + 1; 
+        int wY = (int)((ogY - dY) / offset); 
 		
 		int status = GetBlockStatus(wX, wY);
 		if (status == 1) {
