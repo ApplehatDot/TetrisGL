@@ -23,6 +23,9 @@ extern Block* currentBlock;
 extern Block* prevBlock[100];
 extern int gameBoard[10][20];
 
+float ReturnBlockX(Block *cb, float offset, int i);
+float ReturnBlockY(Block *cb, float offset, int i);
+
 /** Funkcja Rysująca Block *, wedle jej struktury
  * @param *block Struktura budowy bloku, według jej opcji.
  * @param offset odstęp między blokami.
