@@ -172,6 +172,14 @@ int GetBlockStatus(int wX, int wY) {
     }
 }
 
+float ReturnBlockX(Block *cb, float offset, int i){
+	return cb->bx + cb->shape[cb->rotation][i][0] * offset;
+}
+
+float ReturnBlockY(Block *cb, float offset, int i){
+	return cb->by + cb->shape[cb->rotation][i][1] * offset;
+}
+
 bool CanPlaceBlock( Block *cb, float offset) {
     for (int i = 0; i < 4; i++) {
         float ogX = cb->bx + cb->shape[cb->rotation][i][0] * offset;
